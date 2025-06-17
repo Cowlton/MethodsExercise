@@ -9,6 +9,27 @@
         public static string name;
 
         public static string lastType;
+
+        static int Sum(params int[] numbers)
+        {
+            int total = 0;
+            foreach (int num in numbers)
+            {
+                total += num;
+            }
+            return total;
+        }
+        static int Multiply(params int[] numbers)
+        {
+            int result = 1;
+
+            foreach (int num in numbers)
+            {
+                result *= num;
+            }
+
+            return result;
+        }
         
         static void Main(string[] args)
         {
@@ -18,9 +39,16 @@
         }
         static string StartUp()
         {
+            int result = Sum(1, 4);
+            int result2 = Multiply(4,4,4);
+            Console.WriteLine(result);
+            Console.WriteLine(result2);
+            
             Console.WriteLine("Hello There");
             Console.WriteLine("What is your name?");
             Console.WriteLine($"");
+            
+            
             string startName = Console.ReadLine();
             string convertedName = ConvertFormat(startName);
             return convertedName;
